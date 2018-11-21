@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+${repo}/bin/build
+cp ${repo}/out/grades-cli-darwin-amd64 /usr/local/bin/grades
