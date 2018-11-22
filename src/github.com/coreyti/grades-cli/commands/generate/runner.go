@@ -5,19 +5,19 @@ import (
 )
 
 type Runner struct {
-	input  string
-	output string
+	input string
+	scale string
 }
 
-func NewRunner(input string, output string) *Runner {
+func NewRunner(input string, scale string) *Runner {
 	return &Runner{
-		input:  input,
-		output: output,
+		input: input,
+		scale: scale,
 	}
 }
 
 func (r *Runner) Run() error {
-	g := models.NewGrader(r.input, r.output)
+	g := models.NewGrader(r.input, r.scale)
 
 	return g.Grade()
 }

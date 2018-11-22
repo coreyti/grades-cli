@@ -17,6 +17,12 @@
   version = "v1.7.0"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/gocarina/gocsv"
+  packages = ["."]
+  revision = "cde31a6ec2a87636e8a5f13d18468e9dd683149e"
+
+[[projects]]
   name = "github.com/inconshreveable/mousetrap"
   packages = ["."]
   revision = "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
@@ -79,6 +85,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "b917eec182c035dff249633c49cefb12736abdd53e3f858195a47e2b5d3eb9b8"
+  inputs-digest = "4dfae0172e486cfe0cab02e040f4918daa3d0a39638bba2da302eaaf73c270f1"
   solver-name = "gps-cdcl"
   solver-version = 1
