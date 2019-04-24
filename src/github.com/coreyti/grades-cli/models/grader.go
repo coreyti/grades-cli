@@ -12,6 +12,7 @@ import (
 )
 
 type Input struct {
+	ID     string `csv:"Stu#"`
 	Name   string `csv:"Student Name"`
 	Scores string `csv:"Scores"`
 }
@@ -69,7 +70,7 @@ func (g *Grader) Grade() error {
 		return fmt.Errorf("Loading inputs from file; error: %s", err)
 	}
 
-	fmt.Println("\"Student Name\",Grade")
+	fmt.Println("\"Stu#\",\"Student Name\",Score")
 
 	for _, input := range inputs {
 		var gradesFloat = []float64{}
@@ -79,7 +80,7 @@ func (g *Grader) Grade() error {
 		for _, g := range grades {
 			grade, err := strconv.ParseFloat(g, 32)
 			if err != nil {
-				gradesFloat = append(gradesFloat, 0.0)
+				gradesFloat = append(gradesFloat, -1)
 			} else {
 				gradesFloat = append(gradesFloat, grade)
 			}
@@ -89,8 +90,12 @@ func (g *Grader) Grade() error {
 		// gradeSum := sum(&gradesFloat)
 		// gradePct := convert(gradeAvg, scales)
 
-		gradePct := convert(gradeAvg, scales)
-		fmt.Printf("\"%s\",%s\n", input.Name, fmt.Sprintf("%.2f", gradePct))
+		if gradeAvg < 0 {
+			fmt.Printf("%s,\"%s\",%s\n", input.ID, input.Name, "NA")
+		} else {
+			gradePct := convert(gradeAvg, scales)
+			fmt.Printf("%s,\"%s\",%s\n", input.ID, input.Name, fmt.Sprintf("%.2f", gradePct))
+		}
 	}
 
 	return nil

@@ -9,3 +9,6 @@ go build -o ${repo}/out/grades-cli-darwin-amd64 github.com/coreyti/grades-cli
 
 env GOOS=linux GOARCH=amd64 \
 go build -o ${repo}/out/grades-cli-linux-amd64 github.com/coreyti/grades-cli
+
+env GOOS=windows GOARCH=amd64 \
+go build -o ${repo}/out/grades-cli-windows-amd64 github.com/coreyti/grades-cli
