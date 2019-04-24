@@ -71,3 +71,12 @@ where
   0.50,30
   0.00,0
   ```
+
+resulting in
+
+```csv
+"Stu#","Student Name",Score
+123,"Last, First",60.80
+234,"Last, First",90.00
+456,"Last, First",86.87
+```
