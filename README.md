@@ -31,7 +31,7 @@ where
   ```csv
   Stu#,Student Name,Scores
   123,"Last, First",1,.5,1,1,2
-  234,"Last, First, Henry Eliseo",4,1,4,3,3
+  234,"Last, First",4,1,4,3,3
   456,"Last, First",4,4,2.5,1,2.5
   ```
 
